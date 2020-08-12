@@ -1,1 +1,1 @@
-# ActiveModuleSerializers.config.default_includes = '**'
+ActiveModuleSerializers.config.default_includes = '**'

@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+    include ActionController::Cookies
+
     def index
         users = User.all
         render json: users
@@ -43,27 +45,27 @@ class UsersController < ApplicationController
     end
 
     def update
-        # user = session_user
+        user = session_user
 
-        user = User.find_by(id: params[:id])
+        # user = User.find_by(id: params[:id])
         user.update(user_params)
     end
 
     def destroy
-        # user = session_user
-        user = User.find_by(params[:id])
+        user = session_user
+        # user = User.find_by(params[:id])
         user.destroy
     end
 
-    # def auto_login
-    #     user = session_user
+    def auto_login
+        user = session_user
 
-    #     if user
-    #         render json: session_user
-    #     else
-    #         render json:  {errors: "User doesn't exisit."}
-    #     end
-    # end
+        if user
+            render json: session_user
+        else
+            render json:  {errors: "User doesn't exisit."}
+        end
+    end
 
     private
     
