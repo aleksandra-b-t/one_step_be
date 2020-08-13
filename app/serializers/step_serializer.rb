@@ -1,4 +1,4 @@
 class StepSerializer < ActiveModel::Serializer
-  attributes :id, :activity_id, :check
+  attributes :id, :user_id, :activity_id, :check
   
 end

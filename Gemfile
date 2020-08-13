@@ -3,7 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
-gem 'active_model_serializers' 
+gem "active_model_serializers", require: true
+gem 'activemodel-serializers-xml'
+gem 'mongo_mapper'
+gem 'bson_ext'
 gem 'jwt'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
