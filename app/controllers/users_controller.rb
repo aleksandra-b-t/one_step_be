@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    # before_action :authorized, only: [:login]
     include ActionController::Cookies
 
     def index
